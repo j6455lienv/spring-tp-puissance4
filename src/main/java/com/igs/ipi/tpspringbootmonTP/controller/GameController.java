@@ -11,7 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/game")
 public class GameController {
 
-    GameService gm = new GameService();
+    GameService gs = new GameService();
+
 
     @GetMapping("/new")
     public ModelAndView newGame(){
@@ -19,8 +20,9 @@ public class GameController {
                 .addObject("title","Nouveau Puissance4")
                 .addObject("body", "test")
                 .addObject("route","/game/new")
-                .addObject("j1", gm.newGame().getNom1())
-                .addObject("j2", gm.newGame().getNom2())
+                .addObject("j1", gs.newGame().getNom1())
+                .addObject("j2", gs.newGame().getNom2())
+                .addObject("tab", gs.newGame().getTab())
                 ;
         return mav;
     }
