@@ -3,11 +3,38 @@ package com.igs.ipi.tpspringbootmonTP.model;
 public class GameModel {
     private String nom1;
     private String nom2;
-    private int[][] tab = new int[7][6];
+    private int[][] gameTable = new int[6][7];
+    private int playerTurn;
+    private int winner;
 
     public GameModel(String nom1, String nom2){
         this.nom1 = nom1;
         this.nom2 = nom2;
+    }
+
+    public int getWinner() {
+        return winner;
+    }
+
+    public void setWinner(int winner) {
+        this.winner = winner;
+    }
+
+    public int getPlayerTurn() {
+        return playerTurn;
+    }
+
+    public void setPlayerTurn(int playerTurn) {
+        this.playerTurn = playerTurn;
+    }
+
+
+    public int[][] getGameTable() {
+        return gameTable;
+    }
+
+    public void setGameTable(int[][] gameTable) {
+        this.gameTable = gameTable;
     }
 
     public String getNom1() {
@@ -27,10 +54,10 @@ public class GameModel {
     }
 
     public int[][] getTab() {
-        return tab;
+        return gameTable;
     }
 
     public void setTab(int[][] tab) {
-        this.tab = tab;
+        this.gameTable = tab;
     }
 }
